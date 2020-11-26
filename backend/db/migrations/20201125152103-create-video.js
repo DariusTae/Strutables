@@ -6,14 +6,22 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
-        unique: true
+        type: Sequelize.INTEGER
       },
+
       name: {
         type: Sequelize.STRING,
         allowNull: false,
       },
       description: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      url: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      key: {
         type: Sequelize.STRING,
         allowNull: false,
       },

@@ -6,8 +6,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
-        unique:true,
+        type: Sequelize.INTEGER
       },
       name: {
         type: Sequelize.STRING,
@@ -16,32 +15,10 @@ module.exports = {
       videoId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        unique:true,
         references: {model: 'Videos'}
       },
       userId: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        unique:true,
-        references: {model: 'Users'}
-      },
-      videoDescription: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        references: {model: 'Videos'}
-      },
-      videoName: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        references: {model: 'Videos'}
-      },
-      videoComments: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        references: {model: 'Videos'}
-      },
-      userName: {
-        type: Sequelize.STRING,
         allowNull: false,
         references: {model: 'Users'}
       },
