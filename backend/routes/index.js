@@ -21,6 +21,8 @@ if (process.env.NODE_ENV === "production") {
     );
   });
 
+
+
   // Serve the static assets in the frontend's build folder
   router.use(express.static(path.resolve("../frontend/build")));
 
@@ -32,6 +34,11 @@ if (process.env.NODE_ENV === "production") {
     );
   });
 }
-
+ if (process.env.NODE_ENV !== 'production') {
+    router.get('/api/csrf/restore', (req, res) => {
+      res.cookie('XSRF-TOKEN', req.csrfToken());
+      return res.json({});
+    });
+  }
 
 module.exports = router;
