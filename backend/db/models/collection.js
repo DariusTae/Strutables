@@ -15,7 +15,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Collection.init({
-    id: DataTypes.INTEGER,
     name: DataTypes.STRING,
     videoId: DataTypes.INTEGER,
     userId: DataTypes.INTEGER,
